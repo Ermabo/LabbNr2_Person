@@ -6,7 +6,12 @@ using System.Threading.Tasks;
 
 namespace OOLabb2_Grumpy
 {
-    public class Child
+    public class Child : Person 
     {
+        public Child(string fName, string lName)
+            : base (fName, lName)
+        {
+
+        }
     }
 }
