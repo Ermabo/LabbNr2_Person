@@ -8,17 +8,13 @@ namespace OOLabb2_Grumpy
 {
     abstract class Person : IComparable<Person>
     {
-<<<<<<< HEAD
-        private string firstName;
-        private string lastName;
-
 
         public int CompareTo(Person that)
         {
 
             return 1;
         }
-=======
+
         protected string firstName { get; set; }
         protected string lastName { get; set; }
 
