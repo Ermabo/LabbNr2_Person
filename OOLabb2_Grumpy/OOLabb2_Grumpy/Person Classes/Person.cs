@@ -6,7 +6,16 @@ using System.Threading.Tasks;
 
 namespace OOLabb2_Grumpy
 {
-    abstract class Person
+    abstract class Person : IComparable<Person>
     {
+        private string firstName;
+        private string lastName;
+
+
+        public int CompareTo(Person that)
+        {
+
+            return 1;
+        }
     }
 }
