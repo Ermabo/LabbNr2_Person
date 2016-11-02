@@ -6,7 +6,19 @@ using System.Threading.Tasks;
 
 namespace OOLabb2_Grumpy
 {
-    public class Male
+    public class Male : Person  
     {
+        private string title = "Mr";
+
+        public Male(string fName, string lName)
+            : base(fName, lName)
+        {
+        }
+
+        public override string GetName()
+        {
+            return title + " " + base.GetName();
+        }
+
     }
 }
