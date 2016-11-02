@@ -19,7 +19,7 @@ namespace OOLabb2_Grumpy
 
         public virtual string GetName()
         {
-            return firstName + lastName;
+            return firstName + " " + lastName;
         }
 
         public int CompareTo(Person that)
