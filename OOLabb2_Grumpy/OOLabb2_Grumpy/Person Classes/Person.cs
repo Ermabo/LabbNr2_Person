@@ -6,8 +6,19 @@ using System.Threading.Tasks;
 
 namespace OOLabb2_Grumpy
 {
-    abstract class Person
+    abstract class Person : IComparable<Person>
     {
+<<<<<<< HEAD
+        private string firstName;
+        private string lastName;
+
+
+        public int CompareTo(Person that)
+        {
+
+            return 2;
+        }
+=======
         protected string firstName { get; set; }
         protected string lastName { get; set; }
 
@@ -17,5 +28,6 @@ namespace OOLabb2_Grumpy
             lastName = lName;
         }
 
+>>>>>>> refs/remotes/origin/master
     }
 }
