@@ -16,7 +16,7 @@ namespace OOLabb2_Grumpy
         public int CompareTo(Person that)
         {
 
-            return 2;
+            return 1;
         }
 =======
         protected string firstName { get; set; }
