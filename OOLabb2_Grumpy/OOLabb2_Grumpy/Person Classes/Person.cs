@@ -15,7 +15,7 @@ namespace OOLabb2_Grumpy
         public int CompareTo(Person that)
         {
 
-            return 1;
+            return 2;
         }
     }
 }
