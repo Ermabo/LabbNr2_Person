@@ -26,24 +26,19 @@ namespace OOLabb2_Grumpy
 
         private void createButton_Click(object sender, EventArgs e)
         {
-            string sex = "";
-            if (firstnameTextbox.Text == "")
-            {
-                MessageBox.Show("Set firstname!");
-            }
-            if (lastnameTextbox.Text == "")
-            {
-                MessageBox.Show("Set lasname!");
-            }
+            string _firstname = firstnameTextbox.Text;
+            string _lastname = lastnameTextbox.Text;
+            string _sex;
+            
             if (manRadio.Checked == true)
             {
-                sex = "man";
+                _sex = "man";
             }
-            if (womanRadio.Checked == true)
+            else
             {
-                sex = "woman";
+                _sex = "woman";
             }
-
+            MyList.Add(_firstname, _lastname, _sex);
         }
     }
 }
