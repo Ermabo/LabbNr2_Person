@@ -14,7 +14,7 @@ namespace OOLabb2_Grumpy
     {
         private bool firstnameAcceptable, lastnameAcceptable, genderSelected = false;
 
-        public List<Person> MyList = new List<Person>();
+        public List<Person> personList = new List<Person>();
 
         public MainForm()
         {
@@ -101,19 +101,16 @@ namespace OOLabb2_Grumpy
 
         private void createButton_Click(object sender, EventArgs e)
         {
-            string _firstname = firstnameTextbox.Text;
-            string _lastname = lastnameTextbox.Text;
-            string _sex;
             
-            if (manRadio.Checked == true)
+            if (manRadio.Checked)
             {
-                _sex = "man";
+                personList.Add(new Male (firstnameTextbox.Text, lastnameTextbox.Text));
             }
             else
             {
-                _sex = "woman";
+                personList.Add(new Female(firstnameTextbox.Text, lastnameTextbox.Text));
             }
-            MyList.Add(_firstname, _lastname, _sex);
+
         }
     }
 }
