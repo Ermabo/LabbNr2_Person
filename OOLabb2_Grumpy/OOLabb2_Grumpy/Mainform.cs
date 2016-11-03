@@ -14,7 +14,7 @@ namespace OOLabb2_Grumpy
     {
         private bool firstnameAcceptable, lastnameAcceptable, genderSelected = false;
 
-        static List<Person> personList = new List<Person>();
+        List<Person> personList = new List<Person>();
 
         public MainForm()
         {
@@ -29,6 +29,12 @@ namespace OOLabb2_Grumpy
             foreach (Person person in personList)
             {
                 personListbox.Items.Add(person.GetName());
+            }
+
+            personListbox.Items.Clear();
+            foreach (Person p in personList)
+            {
+                personListbox.Items.Add(p);
             }
         }
 
@@ -104,11 +110,20 @@ namespace OOLabb2_Grumpy
             }
         }
 
+        //Removes people.
+        private void removeButton_Click(object sender, EventArgs e)
+        {
+            foreach (var p in personListbox.SelectedItems)
+            {
+                personList.Remove((Person)p);
+            }
+            ReList();
+        }
+
         private void MainForm_Load(object sender, EventArgs e)
         {
 
         }
-
         private void createButton_Click(object sender, EventArgs e)
         {
             
