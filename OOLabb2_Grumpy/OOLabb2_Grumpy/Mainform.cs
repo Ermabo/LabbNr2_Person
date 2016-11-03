@@ -22,10 +22,15 @@ namespace OOLabb2_Grumpy
             createButton.Enabled = false;
         }
 
-        
-
-
-
+        //Regenerates the list
+        public void ReList()
+        {
+            listbox.Items.Clear();
+            foreach (Person person in personList)
+            {
+                listbox.Items.Add(person.GetName());
+            }
+        }
 
         //Checks the creation textboxes, making sure they're not empty. If empty, the "create human"-button will be disabled.
         private void firstnameTextbox_TextChanged(object sender, EventArgs e)
@@ -111,6 +116,8 @@ namespace OOLabb2_Grumpy
             {
                 personList.Add(new Female(firstnameTextbox.Text, lastnameTextbox.Text));
             }
+
+            ReList();
 
         }
     }
