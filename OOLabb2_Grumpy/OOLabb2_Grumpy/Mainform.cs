@@ -114,7 +114,7 @@ namespace OOLabb2_Grumpy
         }
 
         //Removes people.
-        //Whether they want to or not...
+        //Whether they want to or not..
         private void removeButton_Click(object sender, EventArgs e)
         {
             foreach (var p in personListbox.SelectedItems)
