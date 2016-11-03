@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.removeButton = new System.Windows.Forms.Button();
             this.mergeButton = new System.Windows.Forms.Button();
             this.sortButton = new System.Windows.Forms.Button();
@@ -40,6 +41,8 @@
             this.firstnameTextbox = new System.Windows.Forms.TextBox();
             this.header = new System.Windows.Forms.Label();
             this.personListbox = new System.Windows.Forms.ListBox();
+            this.maleBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.maleBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // removeButton
@@ -164,8 +167,13 @@
             this.personListbox.Location = new System.Drawing.Point(9, 169);
             this.personListbox.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.personListbox.Name = "personListbox";
+            this.personListbox.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple;
             this.personListbox.Size = new System.Drawing.Size(272, 160);
             this.personListbox.TabIndex = 12;
+            // 
+            // maleBindingSource
+            // 
+            this.maleBindingSource.DataSource = typeof(OOLabb2_Grumpy.Male);
             // 
             // MainForm
             // 
@@ -188,6 +196,7 @@
             this.Name = "MainForm";
             this.Text = "People";
             this.Load += new System.EventHandler(this.MainForm_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.maleBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -207,6 +216,7 @@
         private System.Windows.Forms.TextBox firstnameTextbox;
         private System.Windows.Forms.Label header;
         private System.Windows.Forms.ListBox personListbox;
+        private System.Windows.Forms.BindingSource maleBindingSource;
     }
 }
 
