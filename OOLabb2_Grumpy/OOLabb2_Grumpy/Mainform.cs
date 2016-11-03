@@ -26,9 +26,9 @@ namespace OOLabb2_Grumpy
         public void ReList()
         {
             listbox.Items.Clear();
-            foreach (Person person in personList)
+            foreach (Person p in personList)
             {
-                listbox.Items.Add(person.GetName());
+                listbox.Items.Add(p);
             }
         }
 
@@ -99,11 +99,20 @@ namespace OOLabb2_Grumpy
             }
         }
 
+        //Removes people.
+        private void removeButton_Click(object sender, EventArgs e)
+        {
+            foreach (var p in listbox.SelectedItems)
+            {
+                personList.Remove((Person)p);
+            }
+            ReList();
+        }
+
         private void MainForm_Load(object sender, EventArgs e)
         {
 
         }
-
         private void createButton_Click(object sender, EventArgs e)
         {
             
