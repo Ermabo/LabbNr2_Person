@@ -20,7 +20,6 @@ namespace OOLabb2_Grumpy
         {
             InitializeComponent();
             createButton.Enabled = false;
-            removeButton.Enabled = false;
         }
 
         //Regenerates the list
@@ -32,15 +31,6 @@ namespace OOLabb2_Grumpy
                 listbox.Items.Add(person.GetName());
             }
         }
-
-        //UNDER CONSTRUCTION
-        //private void removeButton_Click(object sender, EventArgs e)
-        //{
-        //    foreach (var person in listbox.SelectedItems)
-        //    {
-                
-        //    }
-        //}
 
         //Checks the creation textboxes, making sure they're not empty. If empty, the "create human"-button will be disabled.
         private void firstnameTextbox_TextChanged(object sender, EventArgs e)
@@ -107,12 +97,6 @@ namespace OOLabb2_Grumpy
             {
                 createButton.Enabled = false;
             }
-        }
-
-        private void listbox_SelectedValueChanged(object sender, EventArgs e)
-        {
-            if (listbox.SelectedItem != null) removeButton.Enabled = true;
-            else removeButton.Enabled = false;
         }
 
         private void MainForm_Load(object sender, EventArgs e)
