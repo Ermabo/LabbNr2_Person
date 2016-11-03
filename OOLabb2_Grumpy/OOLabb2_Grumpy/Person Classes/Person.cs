@@ -24,9 +24,7 @@ namespace OOLabb2_Grumpy
 
         public int CompareTo(Person other)
         {
-<<<<<<< HEAD
             return 2;
-=======
             // Alphabetic sort. [A to Z]
 
             if (this.lastName == other.lastName)
@@ -38,8 +36,6 @@ namespace OOLabb2_Grumpy
                 return this.lastName.CompareTo(other.lastName);
 
             }
-
->>>>>>> refs/remotes/origin/a
         }
     }
 }
