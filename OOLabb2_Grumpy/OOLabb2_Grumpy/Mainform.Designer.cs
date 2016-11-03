@@ -51,6 +51,7 @@
             this.removeButton.TabIndex = 23;
             this.removeButton.Text = "Kill";
             this.removeButton.UseVisualStyleBackColor = true;
+            this.removeButton.Click += new System.EventHandler(this.removeButton_Click);
             // 
             // mergeButton
             // 

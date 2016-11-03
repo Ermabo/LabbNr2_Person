@@ -33,12 +33,22 @@ namespace OOLabb2_Grumpy
             if (manRadio.Checked == true)
             {
                 _sex = "man";
+                Male Myman = new Male();
+                MyList.Add(_firstname, _lastname);
             }
             else
             {
                 _sex = "woman";
+                Female MyWoman = new Female();
+                MyList.Add(_firstname, _lastname);
             }
-            MyList.Add(_firstname, _lastname, _sex);
+            
+        }
+        
+        private void removeButton_Click(object sender, EventArgs e)
+        {
+            //listbox.Items.
+            //MyList.RemoveAt();
         }
     }
 }
