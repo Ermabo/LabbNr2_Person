@@ -12,12 +12,10 @@ namespace OOLabb2_Grumpy
 {
     public partial class MainForm : Form
     {
-<<<<<<< HEAD
         private bool firstnameAcceptable, lastnameAcceptable, genderSelected = false;
-=======
+
         public List<Person> MyList = new List<Person>();
 
->>>>>>> refs/remotes/origin/a
         public MainForm()
         {
             InitializeComponent();
