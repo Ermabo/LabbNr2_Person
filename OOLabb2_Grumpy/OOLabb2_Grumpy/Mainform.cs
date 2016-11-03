@@ -12,11 +12,86 @@ namespace OOLabb2_Grumpy
 {
     public partial class MainForm : Form
     {
-        public List<Person> MyList = new List<Person>();
+        private bool firstnameAcceptable, lastnameAcceptable, genderSelected = false;
+
+        public List<Person> personList = new List<Person>();
 
         public MainForm()
         {
             InitializeComponent();
+            createButton.Enabled = false;
+        }
+
+        
+
+
+
+
+        //Checks the creation textboxes, making sure they're not empty. If empty, the "create human"-button will be disabled.
+        private void firstnameTextbox_TextChanged(object sender, EventArgs e)
+        {
+            if (firstnameTextbox.Text != "")
+            {
+                firstnameAcceptable = true;
+                if ((firstnameAcceptable == true && lastnameAcceptable == true) && genderSelected == true)
+                {
+                    createButton.Enabled = true;
+                }
+                else
+                {
+                    createButton.Enabled = false;
+                }
+            }
+            else
+            {
+                firstnameAcceptable = false;
+                createButton.Enabled = false;
+            }
+        }
+        private void lastnameTextbox_TextChanged(object sender, EventArgs e)
+        {
+            if (lastnameTextbox.Text != "")
+            {
+                lastnameAcceptable = true;
+                if ((firstnameAcceptable == true && lastnameAcceptable == true) && genderSelected == true)
+                {
+                    createButton.Enabled = true;
+                }
+                else
+                {
+                    createButton.Enabled = false;
+                }
+            }
+            else
+            {
+                lastnameAcceptable = false;
+                createButton.Enabled = false;
+            }
+        }
+        //These just make sure that a radio button has been selected.
+        private void manRadio_CheckedChanged(object sender, EventArgs e)
+        {
+            genderSelected = true;
+            if ((firstnameAcceptable == true && lastnameAcceptable == true) && genderSelected == true)
+            {
+                createButton.Enabled = true;
+            }
+            else
+            {
+                createButton.Enabled = false;
+            }
+        }
+        private void womanRadio_CheckedChanged(object sender, EventArgs e)
+        {
+            genderSelected = true;
+            if ((firstnameAcceptable == true && lastnameAcceptable == true) && genderSelected == true)
+            {
+                createButton.Enabled = true;
+            }
+            else
+            {
+                createButton.Enabled = false;
+            }
         }
 
         private void MainForm_Load(object sender, EventArgs e)
@@ -26,29 +101,25 @@ namespace OOLabb2_Grumpy
 
         private void createButton_Click(object sender, EventArgs e)
         {
-            string _firstname = firstnameTextbox.Text;
-            string _lastname = lastnameTextbox.Text;
-            string _sex;
             
-            if (manRadio.Checked == true)
+            if (manRadio.Checked)
             {
-                _sex = "man";
-                Male Myman = new Male();
-                MyList.Add(_firstname, _lastname);
+                personList.Add(new Male (firstnameTextbox.Text, lastnameTextbox.Text));
+                
             }
             else
             {
-                _sex = "woman";
-                Female MyWoman = new Female();
-                MyList.Add(_firstname, _lastname);
+                personList.Add(new Female(firstnameTextbox.Text, lastnameTextbox.Text));
             }
-            
+
         }
-        
-        private void removeButton_Click(object sender, EventArgs e)
+
+        private void sortbutton_Click(object sender, EventArgs e)
         {
-            //listbox.Items.
-            //MyList.RemoveAt();
+            personList.Sort();
+            foreach (personList.lastname in personList)
+                listbox.items.add()
+            
         }
     }
 }

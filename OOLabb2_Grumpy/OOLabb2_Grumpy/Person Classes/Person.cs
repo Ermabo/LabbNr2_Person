@@ -24,6 +24,7 @@ namespace OOLabb2_Grumpy
 
         public int CompareTo(Person other)
         {
+            return 2;
             // Alphabetic sort. [A to Z]
 
             if (this.lastName == other.lastName)
@@ -33,9 +34,13 @@ namespace OOLabb2_Grumpy
             else
             {
                 return this.lastName.CompareTo(other.lastName);
+                //System.Windows.Forms.MessageBox.Show("Test");
 
+
+                //MyPerson.Sort();
+                //foreach (MyPerson.lastname in MyPerson)
+                //    listbox.items.add()
             }
-
         }
     }
 }
