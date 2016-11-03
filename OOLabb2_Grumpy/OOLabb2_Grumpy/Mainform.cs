@@ -25,10 +25,10 @@ namespace OOLabb2_Grumpy
         //Regenerates the list
         public void ReList()
         {
-            listbox.Items.Clear();
+            personListbox.Items.Clear();
             foreach (Person person in personList)
             {
-                listbox.Items.Add(person.GetName());
+                personListbox.Items.Add(person.GetName());
             }
         }
 
