@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.removeButton = new System.Windows.Forms.Button();
             this.mergeButton = new System.Windows.Forms.Button();
             this.sortButton = new System.Windows.Forms.Button();
@@ -40,24 +41,38 @@
             this.firstnameTextbox = new System.Windows.Forms.TextBox();
             this.header = new System.Windows.Forms.Label();
             this.personListbox = new System.Windows.Forms.ListBox();
+            this.maleBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.maleBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // removeButton
             // 
+
             this.removeButton.Location = new System.Drawing.Point(174, 346);
             this.removeButton.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.removeButton.Name = "removeButton";
             this.removeButton.Size = new System.Drawing.Size(56, 27);
+
+            this.removeButton.Location = new System.Drawing.Point(232, 426);
+            this.removeButton.Name = "removeButton";
+            this.removeButton.Size = new System.Drawing.Size(75, 33);
             this.removeButton.TabIndex = 23;
             this.removeButton.Text = "Kill";
             this.removeButton.UseVisualStyleBackColor = true;
+            this.removeButton.Click += new System.EventHandler(this.removeButton_Click);
             // 
             // mergeButton
             // 
+
             this.mergeButton.Location = new System.Drawing.Point(113, 346);
             this.mergeButton.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.mergeButton.Name = "mergeButton";
             this.mergeButton.Size = new System.Drawing.Size(56, 27);
+
+            this.mergeButton.Location = new System.Drawing.Point(151, 426);
+            this.mergeButton.Name = "mergeButton";
+            this.mergeButton.Size = new System.Drawing.Size(75, 33);
+
             this.mergeButton.TabIndex = 22;
             this.mergeButton.Text = "Merge";
             this.mergeButton.UseVisualStyleBackColor = true;
@@ -68,6 +83,9 @@
             this.sortButton.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.sortButton.Name = "sortButton";
             this.sortButton.Size = new System.Drawing.Size(56, 27);
+            this.sortButton.Location = new System.Drawing.Point(70, 426);
+            this.sortButton.Name = "sortButton";
+            this.sortButton.Size = new System.Drawing.Size(75, 33);
             this.sortButton.TabIndex = 21;
             this.sortButton.Text = "Sort";
             this.sortButton.UseVisualStyleBackColor = true;
@@ -78,6 +96,9 @@
             this.createButton.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.createButton.Name = "createButton";
             this.createButton.Size = new System.Drawing.Size(113, 19);
+            this.createButton.Location = new System.Drawing.Point(115, 161);
+            this.createButton.Name = "createButton";
+            this.createButton.Size = new System.Drawing.Size(150, 23);
             this.createButton.TabIndex = 20;
             this.createButton.Text = "Make a human";
             this.createButton.UseVisualStyleBackColor = true;
@@ -90,6 +111,9 @@
             this.womanRadio.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.womanRadio.Name = "womanRadio";
             this.womanRadio.Size = new System.Drawing.Size(62, 17);
+            this.womanRadio.Location = new System.Drawing.Point(221, 123);
+            this.womanRadio.Name = "womanRadio";
+            this.womanRadio.Size = new System.Drawing.Size(77, 21);
             this.womanRadio.TabIndex = 19;
             this.womanRadio.TabStop = true;
             this.womanRadio.Text = "Woman";
@@ -103,6 +127,9 @@
             this.manRadio.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.manRadio.Name = "manRadio";
             this.manRadio.Size = new System.Drawing.Size(46, 17);
+            this.manRadio.Location = new System.Drawing.Point(104, 123);
+            this.manRadio.Name = "manRadio";
+            this.manRadio.Size = new System.Drawing.Size(56, 21);
             this.manRadio.TabIndex = 18;
             this.manRadio.TabStop = true;
             this.manRadio.Text = "Man";
@@ -116,6 +143,9 @@
             this.lastnameLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lastnameLabel.Name = "lastnameLabel";
             this.lastnameLabel.Size = new System.Drawing.Size(59, 13);
+            this.lastnameLabel.Location = new System.Drawing.Point(55, 83);
+            this.lastnameLabel.Name = "lastnameLabel";
+            this.lastnameLabel.Size = new System.Drawing.Size(78, 17);
             this.lastnameLabel.TabIndex = 17;
             this.lastnameLabel.Text = "Last name:";
             // 
@@ -125,6 +155,9 @@
             this.lastnameTextbox.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.lastnameTextbox.Name = "lastnameTextbox";
             this.lastnameTextbox.Size = new System.Drawing.Size(147, 20);
+            this.lastnameTextbox.Location = new System.Drawing.Point(139, 80);
+            this.lastnameTextbox.Name = "lastnameTextbox";
+            this.lastnameTextbox.Size = new System.Drawing.Size(194, 22);
             this.lastnameTextbox.TabIndex = 16;
             this.lastnameTextbox.TextChanged += new System.EventHandler(this.lastnameTextbox_TextChanged);
             // 
@@ -135,6 +168,9 @@
             this.firstnameLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.firstnameLabel.Name = "firstnameLabel";
             this.firstnameLabel.Size = new System.Drawing.Size(58, 13);
+            this.firstnameLabel.Location = new System.Drawing.Point(55, 55);
+            this.firstnameLabel.Name = "firstnameLabel";
+            this.firstnameLabel.Size = new System.Drawing.Size(78, 17);
             this.firstnameLabel.TabIndex = 15;
             this.firstnameLabel.Text = "First name:";
             // 
@@ -144,6 +180,9 @@
             this.firstnameTextbox.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.firstnameTextbox.Name = "firstnameTextbox";
             this.firstnameTextbox.Size = new System.Drawing.Size(147, 20);
+            this.firstnameTextbox.Location = new System.Drawing.Point(139, 52);
+            this.firstnameTextbox.Name = "firstnameTextbox";
+            this.firstnameTextbox.Size = new System.Drawing.Size(194, 22);
             this.firstnameTextbox.TabIndex = 14;
             this.firstnameTextbox.TextChanged += new System.EventHandler(this.firstnameTextbox_TextChanged);
             // 
@@ -155,6 +194,9 @@
             this.header.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.header.Name = "header";
             this.header.Size = new System.Drawing.Size(130, 17);
+            this.header.Location = new System.Drawing.Point(111, 17);
+            this.header.Name = "header";
+            this.header.Size = new System.Drawing.Size(154, 20);
             this.header.TabIndex = 13;
             this.header.Text = "Create new human:";
             // 
@@ -164,14 +206,32 @@
             this.personListbox.Location = new System.Drawing.Point(9, 169);
             this.personListbox.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.personListbox.Name = "personListbox";
+            this.personListbox.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple;
             this.personListbox.Size = new System.Drawing.Size(272, 160);
             this.personListbox.TabIndex = 12;
+            // 
+            // maleBindingSource
+            // 
+            this.maleBindingSource.DataSource = typeof(OOLabb2_Grumpy.Male);
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(287, 391);
+            this.personListbox.FormattingEnabled = true;
+            this.personListbox.ItemHeight = 16;
+            this.personListbox.Location = new System.Drawing.Point(12, 208);
+            this.personListbox.Name = "personListbox";
+            this.personListbox.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple;
+            this.personListbox.Size = new System.Drawing.Size(361, 196);
+            this.personListbox.TabIndex = 12;
+            // 
+            // MainForm
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(383, 481);
             this.Controls.Add(this.removeButton);
             this.Controls.Add(this.mergeButton);
             this.Controls.Add(this.sortButton);
@@ -185,9 +245,11 @@
             this.Controls.Add(this.header);
             this.Controls.Add(this.personListbox);
             this.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.Controls.Add(this.personListbox);
             this.Name = "MainForm";
             this.Text = "People";
             this.Load += new System.EventHandler(this.MainForm_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.maleBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -207,6 +269,7 @@
         private System.Windows.Forms.TextBox firstnameTextbox;
         private System.Windows.Forms.Label header;
         private System.Windows.Forms.ListBox personListbox;
+        private System.Windows.Forms.BindingSource maleBindingSource;
     }
 }
 
