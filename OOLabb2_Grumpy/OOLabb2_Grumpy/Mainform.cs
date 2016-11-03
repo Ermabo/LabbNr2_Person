@@ -12,6 +12,7 @@ namespace OOLabb2_Grumpy
 {
     public partial class MainForm : Form
     {
+        //Bool's to ensure the stability of this program. All hail the bool.
         private bool firstnameAcceptable, lastnameAcceptable, genderSelected = false;
 
         static List<Person> personList = new List<Person>();
@@ -22,13 +23,20 @@ namespace OOLabb2_Grumpy
             createButton.Enabled = false;
         }
 
-        //Regenerates the list
+        //Regenerates the list, with IMPUNITY
         public void ReList()
         {
+<<<<<<< HEAD
             personListbox.Items.Clear();
             foreach (Person person in personList)
             {
                 personListbox.Items.Add(person.GetName());
+=======
+            listbox.Items.Clear();
+            foreach (Person p in personList)
+            {
+                listbox.Items.Add(p);
+>>>>>>> refs/remotes/origin/HS_Branch_Main
             }
         }
 
@@ -104,11 +112,21 @@ namespace OOLabb2_Grumpy
             }
         }
 
+        //Removes people.
+        //Whether they want to or not...
+        private void removeButton_Click(object sender, EventArgs e)
+        {
+            foreach (var p in listbox.SelectedItems)
+            {
+                personList.Remove((Person)p);
+            }
+            ReList();
+        }
+
         private void MainForm_Load(object sender, EventArgs e)
         {
 
         }
-
         private void createButton_Click(object sender, EventArgs e)
         {
             
