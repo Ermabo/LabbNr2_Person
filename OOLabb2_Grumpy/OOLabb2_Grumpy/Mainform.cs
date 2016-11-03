@@ -105,6 +105,7 @@ namespace OOLabb2_Grumpy
             if (manRadio.Checked)
             {
                 personList.Add(new Male (firstnameTextbox.Text, lastnameTextbox.Text));
+                
             }
             else
             {
