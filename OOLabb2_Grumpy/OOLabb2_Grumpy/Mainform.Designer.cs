@@ -88,6 +88,7 @@
             this.womanRadio.TabStop = true;
             this.womanRadio.Text = "Woman";
             this.womanRadio.UseVisualStyleBackColor = true;
+            this.womanRadio.CheckedChanged += new System.EventHandler(this.womanRadio_CheckedChanged);
             // 
             // manRadio
             // 
@@ -99,6 +100,7 @@
             this.manRadio.TabStop = true;
             this.manRadio.Text = "Man";
             this.manRadio.UseVisualStyleBackColor = true;
+            this.manRadio.CheckedChanged += new System.EventHandler(this.manRadio_CheckedChanged);
             // 
             // lastnameLabel
             // 
@@ -115,6 +117,7 @@
             this.lastnameTextbox.Name = "lastnameTextbox";
             this.lastnameTextbox.Size = new System.Drawing.Size(194, 22);
             this.lastnameTextbox.TabIndex = 16;
+            this.lastnameTextbox.TextChanged += new System.EventHandler(this.lastnameTextbox_TextChanged);
             // 
             // firstnameLabel
             // 
@@ -131,6 +134,7 @@
             this.firstnameTextbox.Name = "firstnameTextbox";
             this.firstnameTextbox.Size = new System.Drawing.Size(194, 22);
             this.firstnameTextbox.TabIndex = 14;
+            this.firstnameTextbox.TextChanged += new System.EventHandler(this.firstnameTextbox_TextChanged);
             // 
             // header
             // 
