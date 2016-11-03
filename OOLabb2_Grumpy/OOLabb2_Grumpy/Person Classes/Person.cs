@@ -22,9 +22,24 @@ namespace OOLabb2_Grumpy
             return firstName + " " + lastName;
         }
 
-        public int CompareTo(Person that)
+        public int CompareTo(Person other)
         {
+<<<<<<< HEAD
             return 2;
+=======
+            // Alphabetic sort. [A to Z]
+
+            if (this.lastName == other.lastName)
+            {
+                return this.firstName.CompareTo(other.firstName);
+            }
+            else
+            {
+                return this.lastName.CompareTo(other.lastName);
+
+            }
+
+>>>>>>> refs/remotes/origin/a
         }
     }
 }

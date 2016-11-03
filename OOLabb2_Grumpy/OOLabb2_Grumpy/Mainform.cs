@@ -12,7 +12,12 @@ namespace OOLabb2_Grumpy
 {
     public partial class MainForm : Form
     {
+<<<<<<< HEAD
         private bool firstnameAcceptable, lastnameAcceptable, genderSelected = false;
+=======
+        public List<Person> MyList = new List<Person>();
+
+>>>>>>> refs/remotes/origin/a
         public MainForm()
         {
             InitializeComponent();
@@ -89,6 +94,28 @@ namespace OOLabb2_Grumpy
             {
                 createButton.Enabled = false;
             }
+        }
+
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void createButton_Click(object sender, EventArgs e)
+        {
+            string _firstname = firstnameTextbox.Text;
+            string _lastname = lastnameTextbox.Text;
+            string _sex;
+            
+            if (manRadio.Checked == true)
+            {
+                _sex = "man";
+            }
+            else
+            {
+                _sex = "woman";
+            }
+            MyList.Add(_firstname, _lastname, _sex);
         }
     }
 }
