@@ -8,8 +8,8 @@ namespace OOLabb2_Grumpy
 {
     public abstract class Person : IComparable<Person>
     {
-        protected string firstName { get; set; }
-        protected string lastName { get; set; }
+        public string firstName { get; set; }
+        public string lastName { get; set; }
 
         public Person(string fName, string lName)
         {
@@ -24,7 +24,7 @@ namespace OOLabb2_Grumpy
 
         public int CompareTo(Person other)
         {
-            return 2;
+
             // Alphabetic sort. [A to Z]
 
             if (this.lastName == other.lastName)
@@ -34,8 +34,13 @@ namespace OOLabb2_Grumpy
             else
             {
                 return this.lastName.CompareTo(other.lastName);
-
             }
         }
+        public override string ToString()
+        {
+            // String representation.
+            return this.lastName.ToString() + "," + this.firstName;
+        }
+
     }
 }

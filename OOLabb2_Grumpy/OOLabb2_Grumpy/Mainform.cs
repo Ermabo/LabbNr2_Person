@@ -116,6 +116,56 @@ namespace OOLabb2_Grumpy
             ReList();
         }
 
+        private void textSearch_TextChanged(object sender, EventArgs e)
+        {
+            if (textBox1.Text == "")
+            {
+                buttonClear.Enabled = false;
+            }
+            else
+            {
+                buttonClear.Enabled = true;
+            }
+            string tmp = textBox1.Text;
+            personListbox.Items.Clear();
+            foreach (var item in personList)
+            {
+                if (item.firstName.ToLower().Contains(tmp.ToLower()))
+                {
+                    personListbox.Items.Add(item);
+                }
+                else if (item.lastName.ToLower().Contains(tmp.ToLower()))
+                {
+                    personListbox.Items.Add(item);
+                }
+            }
+
+        }
+
+        private void buttonClear_Click(object sender, EventArgs e)
+        {
+            textBox1.Text = "";
+        }
+
+        private void buttonAddSomePeople_Click(object sender, EventArgs e)
+        {
+            //Add some people to the empty listbox
+            personListbox.Items.Clear();
+            personList.Add(new Male("Steve", "Jobs"));
+            personList.Add(new Female("Janet", "Jackson"));
+            personList.Add(new Male("Andrew", "Loyd Webber"));
+            personList.Add(new Female("Lucy", "Lou"));
+            personList.Add(new Male("Bill", "Gates"));
+            personList.Add(new Female("Christina", "Applegate"));
+            personList.Add(new Male("Bing", "Crosby"));
+            personList.Add(new Female("Amanda", "Bluebarry"));
+            foreach (var item in personList)
+            {
+                personListbox.Items.Add(item);
+            }
+
+        }
+
         private void MainForm_Load(object sender, EventArgs e)
         {
 
