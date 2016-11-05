@@ -80,6 +80,7 @@
             this.sortButton.TabIndex = 21;
             this.sortButton.Text = "Sort";
             this.sortButton.UseVisualStyleBackColor = true;
+            this.sortButton.Click += new System.EventHandler(this.sortButton_Click);
             // 
             // createButton
             // 

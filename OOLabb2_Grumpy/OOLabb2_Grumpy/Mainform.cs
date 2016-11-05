@@ -26,10 +26,10 @@ namespace OOLabb2_Grumpy
         //Regenerates the list, with IMPUNITY
         public void ReList()
         {
-            personList.Clear();
+            personListbox.Items.Clear();
             foreach (Person person in personList)
             {
-                personList.Add(person);
+                personListbox.Items.Add(person);
             }
         }
 
@@ -164,6 +164,19 @@ namespace OOLabb2_Grumpy
                 personListbox.Items.Add(item);
             }
 
+        }
+
+        private void sortButton_Click(object sender, EventArgs e)
+        {
+            personListbox.Items.Clear();
+            // Uses IComparable.CompareTo()
+            personList.Sort();
+
+            // Uses Employee.ToString
+            foreach (var item in personList)
+            {
+                personListbox.Items.Add(item);
+            }
         }
 
         private void MainForm_Load(object sender, EventArgs e)
