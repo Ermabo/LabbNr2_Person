@@ -96,11 +96,7 @@ namespace OOLabb2_Grumpy
             personListbox.Items.Clear();
             foreach (var item in personList)
             {
-                if (item.firstName.ToLower().Contains(tmp.ToLower()))
-                {
-                    personListbox.Items.Add(item);
-                }
-                else if (item.lastName.ToLower().Contains(tmp.ToLower()))
+                if (item.ToString().ToLower().Contains(tmp.ToLower()))
                 {
                     personListbox.Items.Add(item);
                 }

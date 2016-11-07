@@ -197,7 +197,7 @@
             // buttonClear
             // 
             this.buttonClear.Enabled = false;
-            this.buttonClear.Location = new System.Drawing.Point(66, 584);
+            this.buttonClear.Location = new System.Drawing.Point(58, 583);
             this.buttonClear.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.buttonClear.Name = "buttonClear";
             this.buttonClear.Size = new System.Drawing.Size(57, 25);
