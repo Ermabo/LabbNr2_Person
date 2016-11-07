@@ -41,7 +41,7 @@
             this.header = new System.Windows.Forms.Label();
             this.personListbox = new System.Windows.Forms.ListBox();
             this.buttonAddSomePeople = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.searchTextbox = new System.Windows.Forms.TextBox();
             this.buttonClear = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -186,13 +186,13 @@
             this.buttonAddSomePeople.UseVisualStyleBackColor = true;
             this.buttonAddSomePeople.Click += new System.EventHandler(this.buttonAddSomePeople_Click);
             // 
-            // textBox1
+            // searchTextbox
             // 
-            this.textBox1.Location = new System.Drawing.Point(391, 65);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(135, 20);
-            this.textBox1.TabIndex = 25;
-            this.textBox1.TextChanged += new System.EventHandler(this.textSearch_TextChanged);
+            this.searchTextbox.Location = new System.Drawing.Point(391, 65);
+            this.searchTextbox.Name = "searchTextbox";
+            this.searchTextbox.Size = new System.Drawing.Size(135, 20);
+            this.searchTextbox.TabIndex = 25;
+            this.searchTextbox.TextChanged += new System.EventHandler(this.textSearch_TextChanged);
             // 
             // buttonClear
             // 
@@ -232,7 +232,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.buttonClear);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.searchTextbox);
             this.Controls.Add(this.buttonAddSomePeople);
             this.Controls.Add(this.removeButton);
             this.Controls.Add(this.mergeButton);
@@ -270,7 +270,7 @@
         private System.Windows.Forms.Label header;
         private System.Windows.Forms.ListBox personListbox;
         private System.Windows.Forms.Button buttonAddSomePeople;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox searchTextbox;
         private System.Windows.Forms.Button buttonClear;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
