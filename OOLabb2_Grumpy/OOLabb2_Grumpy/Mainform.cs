@@ -118,7 +118,7 @@ namespace OOLabb2_Grumpy
 
         private void textSearch_TextChanged(object sender, EventArgs e)
         {
-            if (textBox1.Text == "")
+            if (searchTextbox.Text == "")
             {
                 buttonClear.Enabled = false;
             }
@@ -126,7 +126,7 @@ namespace OOLabb2_Grumpy
             {
                 buttonClear.Enabled = true;
             }
-            string tmp = textBox1.Text;
+            string tmp = searchTextbox.Text;
             personListbox.Items.Clear();
             foreach (var item in personList)
             {
@@ -144,7 +144,7 @@ namespace OOLabb2_Grumpy
 
         private void buttonClear_Click(object sender, EventArgs e)
         {
-            textBox1.Text = "";
+            searchTextbox.Text = "";
         }
 
         private void buttonAddSomePeople_Click(object sender, EventArgs e)
