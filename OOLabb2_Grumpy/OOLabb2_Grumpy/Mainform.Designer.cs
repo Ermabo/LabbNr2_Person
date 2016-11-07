@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.removeButton = new System.Windows.Forms.Button();
             this.mergeButton = new System.Windows.Forms.Button();
             this.sortButton = new System.Windows.Forms.Button();
@@ -46,8 +45,6 @@
             this.buttonClear = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.maleBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            ((System.ComponentModel.ISupportInitialize)(this.maleBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // removeButton
@@ -70,6 +67,7 @@
             this.mergeButton.TabIndex = 22;
             this.mergeButton.Text = "Merge";
             this.mergeButton.UseVisualStyleBackColor = true;
+            this.mergeButton.Click += new System.EventHandler(this.mergeButton_Click);
             // 
             // sortButton
             // 
@@ -226,10 +224,6 @@
             this.label2.TabIndex = 28;
             this.label2.Text = "Search";
             // 
-            // maleBindingSource
-            // 
-            this.maleBindingSource.DataSource = typeof(OOLabb2_Grumpy.Male);
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -256,7 +250,6 @@
             this.Name = "MainForm";
             this.Text = "People";
             this.Load += new System.EventHandler(this.MainForm_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.maleBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -276,7 +269,6 @@
         private System.Windows.Forms.TextBox firstnameTextbox;
         private System.Windows.Forms.Label header;
         private System.Windows.Forms.ListBox personListbox;
-        private System.Windows.Forms.BindingSource maleBindingSource;
         private System.Windows.Forms.Button buttonAddSomePeople;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button buttonClear;
