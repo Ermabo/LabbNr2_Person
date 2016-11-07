@@ -25,16 +25,16 @@ namespace OOLabb2_Grumpy
         public static Child operator +(Person man, Person woman)
         {
             Random random = new Random();
-            int nameChoice = random.Next(2);
+            int nameChoice = random.Next(1, 3);
 
-            if(nameChoice == 2)
+            if(nameChoice == 2) // Two possible combinations for child name
             {
-                Child child = new Child(man.lastName, woman.lastName);
+                Child child = new Child(man.firstName, woman.lastName);
                 return child;
             }
             else
             {
-                Child child = new Child(woman.firstName, woman.lastName);
+                Child child = new Child(woman.firstName, man.lastName);
                 return child;
             }
         }

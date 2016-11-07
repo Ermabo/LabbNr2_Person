@@ -35,12 +35,6 @@ namespace OOLabb2_Grumpy
             }
         }
 
-
-        //public static Child operator+ (Male man, Female woman)
-        //{
-        //    personList.Add(new Child())
-        //}
-
         //Checks the creation textboxes, making sure they're not empty. If empty, the "Create Human"-button will be disabled.
         private void firstnameTextbox_TextChanged(object sender, EventArgs e)
         {
@@ -217,7 +211,19 @@ namespace OOLabb2_Grumpy
         //Creates a child. Birds and bees you know?
         private void mergeButton_Click(object sender, EventArgs e)
         {
+            if(personListbox.SelectedItems.Count == 2) //Checks if 2 persons are selected
+            {
+                //Checks to see if a male and a female is selected for merge
+                if (personListbox.SelectedItems[0] is Female && personListbox.SelectedItems[1] is Male
+                    || personListbox.SelectedItems[0] is Male && personListbox.SelectedItems[1] is Female)
+                {
+                    personList.Add((Person)personListbox.SelectedItems[0] + (Person)personListbox.SelectedItems[1]);
+                    ReList();
+                }
+                
+            }
 
+            
         }
 
         private void MainForm_Load(object sender, EventArgs e)
