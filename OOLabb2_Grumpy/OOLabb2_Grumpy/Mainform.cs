@@ -41,7 +41,7 @@ namespace OOLabb2_Grumpy
         //    personList.Add(new Child())
         //}
 
-        //Checks the creation textboxes, making sure they're not empty. If empty, the appropriate button will be disabled.
+        //Checks the creation textboxes, making sure they're not empty. If empty, the "Create Human"-button will be disabled.
         private void firstnameTextbox_TextChanged(object sender, EventArgs e)
         {
             if (firstnameTextbox.Text != "")
@@ -82,6 +82,7 @@ namespace OOLabb2_Grumpy
                 createButton.Enabled = false;
             }
         }
+        //The search function.
         private void textSearch_TextChanged(object sender, EventArgs e)
         {
             if (searchTextbox.Text == "")
