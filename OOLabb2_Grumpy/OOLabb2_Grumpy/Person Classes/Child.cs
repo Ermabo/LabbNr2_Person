@@ -8,7 +8,7 @@ namespace OOLabb2_Grumpy
 {
     public class Child : Person 
     {
-        private string title = "Child.";
+        private string title = "Child";
 
         public Child(string fName, string lName)
             : base (fName, lName)
