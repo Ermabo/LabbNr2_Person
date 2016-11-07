@@ -181,7 +181,7 @@
             this.buttonAddSomePeople.Name = "buttonAddSomePeople";
             this.buttonAddSomePeople.Size = new System.Drawing.Size(237, 28);
             this.buttonAddSomePeople.TabIndex = 24;
-            this.buttonAddSomePeople.Text = "Lets add some people";
+            this.buttonAddSomePeople.Text = "Add people for testing purposes";
             this.buttonAddSomePeople.UseVisualStyleBackColor = true;
             this.buttonAddSomePeople.Click += new System.EventHandler(this.buttonAddSomePeople_Click);
             // 
