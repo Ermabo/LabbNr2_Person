@@ -158,7 +158,14 @@ namespace OOLabb2_Grumpy
             {
                 personList.Remove((Person)p);
             }
-            scream.Play();
+            try
+            {
+                scream.Play();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message + "\n" + "\"scream.wav\" ska finnas i samma plats som .exe-filen körs.");
+            }
             ReList();
         }
 
