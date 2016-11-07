@@ -15,7 +15,7 @@ namespace OOLabb2_Grumpy
         System.Media.SoundPlayer scream = new System.Media.SoundPlayer("scream.wav");
 
         //Bool's to ensure the stability of this program. All hail the bool.
-        private bool firstnameAcceptable, lastnameAcceptable, genderSelected = false;
+        private bool firstnameAcceptable, lastnameAcceptable, genderSelected, missingsoundwarned = false;
 
         static List<Person> personList = new List<Person>();
 
@@ -164,7 +164,16 @@ namespace OOLabb2_Grumpy
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message + "\n" + "\"scream.wav\" ska finnas i samma plats som .exe-filen körs.");
+                if (missingsoundwarned == false)
+                {
+                    System.Media.SystemSounds.Question.Play();
+                    MessageBox.Show(ex.Message + "\n" + "\"scream.wav\" ska finnas i samma plats som .exe-filen körs." + "\n\nDenna varning visas bara en gång.");
+                    missingsoundwarned = true;
+                }
+                else
+                {
+                    System.Media.SystemSounds.Question.Play();
+                }
             }
             ReList();
         }
