@@ -12,8 +12,6 @@ namespace OOLabb2_Grumpy
 {
     public partial class MainForm : Form
     {
-        System.Media.SoundPlayer scream = new System.Media.SoundPlayer("scream.wav");
-
         //Bool's to ensure the stability of this program. All hail the bool.
         private bool firstnameAcceptable, lastnameAcceptable, genderSelected = false;
 
@@ -36,12 +34,8 @@ namespace OOLabb2_Grumpy
         }
 
 
-        //public static Child operator+ (Male man, Female woman)
-        //{
-        //    personList.Add(new Child())
-        //}
 
-        //Checks the creation textboxes, making sure they're not empty. If empty, the appropriate button will be disabled.
+        //Checks the creation textboxes, making sure they're not empty. If empty, the "create human"-button will be disabled.
         private void firstnameTextbox_TextChanged(object sender, EventArgs e)
         {
             if (firstnameTextbox.Text != "")
@@ -82,31 +76,6 @@ namespace OOLabb2_Grumpy
                 createButton.Enabled = false;
             }
         }
-        private void textSearch_TextChanged(object sender, EventArgs e)
-        {
-            if (searchTextbox.Text == "")
-            {
-                buttonClear.Enabled = false;
-            }
-            else
-            {
-                buttonClear.Enabled = true;
-            }
-            string tmp = searchTextbox.Text;
-            personListbox.Items.Clear();
-            foreach (var item in personList)
-            {
-                if (item.firstName.ToLower().Contains(tmp.ToLower()))
-                {
-                    personListbox.Items.Add(item);
-                }
-                else if (item.lastName.ToLower().Contains(tmp.ToLower()))
-                {
-                    personListbox.Items.Add(item);
-                }
-            }
-
-        }
         //These just make sure that a radio button has been selected.
         private void manRadio_CheckedChanged(object sender, EventArgs e)
         {
@@ -133,23 +102,6 @@ namespace OOLabb2_Grumpy
             }
         }
 
-        //Adds a man. Or a woman.
-        private void createButton_Click(object sender, EventArgs e)
-        {
-
-            if (manRadio.Checked)
-            {
-                personList.Add(new Male(firstnameTextbox.Text, lastnameTextbox.Text));
-            }
-            else
-            {
-                personList.Add(new Female(firstnameTextbox.Text, lastnameTextbox.Text));
-            }
-
-            ReList();
-
-        }
-
         //Removes people.
         //Whether they want to or not..
         private void removeButton_Click(object sender, EventArgs e)
@@ -158,30 +110,40 @@ namespace OOLabb2_Grumpy
             {
                 personList.Remove((Person)p);
             }
-            scream.Play();
             ReList();
         }
 
-        //Clears the searchbox
+        private void textSearch_TextChanged(object sender, EventArgs e)
+        {
+            if (searchTextbox.Text == "")
+            {
+                buttonClear.Enabled = false;
+            }
+            else
+            {
+                buttonClear.Enabled = true;
+            }
+            string tmp = searchTextbox.Text;
+            personListbox.Items.Clear();
+            foreach (var item in personList)
+            {
+                if (item.firstName.ToLower().Contains(tmp.ToLower()))
+                {
+                    personListbox.Items.Add(item);
+                }
+                else if (item.lastName.ToLower().Contains(tmp.ToLower()))
+                {
+                    personListbox.Items.Add(item);
+                }
+            }
+
+        }
+
         private void buttonClear_Click(object sender, EventArgs e)
         {
             searchTextbox.Text = "";
         }
-        //Sorts the list.
-        private void sortButton_Click(object sender, EventArgs e)
-        {
-            personListbox.Items.Clear();
-            // Uses IComparable.CompareTo()
-            personList.Sort();
 
-            // Uses Employee.ToString
-            foreach (var item in personList)
-            {
-                personListbox.Items.Add(item);
-            }
-        }
-
-        //Adds some victi... I mean volunteers for testing the program.
         private void buttonAddSomePeople_Click(object sender, EventArgs e)
         {
             //Add some people to the empty listbox
@@ -201,16 +163,60 @@ namespace OOLabb2_Grumpy
 
         }
 
-        //Creates a child. Birds and bees you know?
+        private void sortButton_Click(object sender, EventArgs e)
+        {
+            personListbox.Items.Clear();
+            // Uses IComparable.CompareTo()
+            personList.Sort();
+
+            // Uses Employee.ToString
+            foreach (var item in personList)
+            {
+                personListbox.Items.Add(item);
+            }
+        }
+
         private void mergeButton_Click(object sender, EventArgs e)
         {
+            if (personListbox.SelectedItems.Count == 2)
+            {
+                if (personListbox.SelectedItems[0] is Male && personListbox.SelectedItems[1] is Female)
+                {
+                    //personListbox.SelectedItems[0] + personListbox.SelectedItems[1]
+                }
+                else if(personListbox.SelectedItems[0] is Female && personListbox.SelectedItems[1] is Male)
+                {
 
+                }
+            }
+
+            //foreach (Person p in personListbox.SelectedItems)
+            //{
+            //    if (p is Male)
+            //    {
+                   
+            //    }
+            //}
         }
 
         private void MainForm_Load(object sender, EventArgs e)
         {
 
         }
-        
+        private void createButton_Click(object sender, EventArgs e)
+        {
+            
+            if (manRadio.Checked)
+            {
+                personList.Add(new Male (firstnameTextbox.Text, lastnameTextbox.Text));
+            }
+            else
+            {
+                personList.Add(new Female(firstnameTextbox.Text, lastnameTextbox.Text));
+            }
+
+            ReList();
+
+        }
     }
 }

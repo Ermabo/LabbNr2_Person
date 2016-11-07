@@ -16,9 +16,11 @@ namespace OOLabb2_Grumpy
 
         }
 
+
+
         public override string ToString()
         {
-            return title + " " + firstName + " " + lastName;
+            return title + " " + base.GetName();
         }
     }
 }

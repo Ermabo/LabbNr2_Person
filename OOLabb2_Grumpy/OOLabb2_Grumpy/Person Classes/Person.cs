@@ -22,6 +22,23 @@ namespace OOLabb2_Grumpy
             return firstName + " " + lastName;
         }
 
+        public static Child operator +(Person man, Person woman)
+        {
+            Random random = new Random();
+            int nameChoice = random.Next(2);
+
+            if(nameChoice == 2)
+            {
+                Child child = new Child(man.lastName, woman.lastName);
+                return child;
+            }
+            else
+            {
+                Child child = new Child(woman.firstName, woman.lastName);
+                return child;
+            }
+        }
+
         public int CompareTo(Person other)
         {
 
